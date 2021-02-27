@@ -5,6 +5,7 @@ Copy whole `keenetic` folder to your `custom_components` or install using [HACS]
 
 Configuration:
 ![Configuration](config.png)
+inside of `device_tracker.yaml` file or `device_tracker` section.
 
 Wireless clients with `ssid` and `rssi` data:
 ![Wireless](wireless.png)
