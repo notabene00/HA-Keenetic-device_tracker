@@ -54,9 +54,9 @@ class Keenetic(DeviceScanner):
         """Return the name of the given device or None if we don't know."""
         return next(
             (
-                device.name
+                device.name or device.hostname
                 for device in self.last_results
-                if device.mac == target_mac and device.name
+                if device.mac == target_mac
             ),
             None,
         )
