@@ -89,7 +89,7 @@ class Keenetic(DeviceScanner):
 
         Returns boolean if scanning successful.
         """
-        if self.router.is_authenticated:
-            self.last_results = self.router.connected_devices
-            return True
-        return False
+        devices_list = self.router.connected_devices
+        if devices_list:
+            self.last_results = devices_list
+        return devices_list

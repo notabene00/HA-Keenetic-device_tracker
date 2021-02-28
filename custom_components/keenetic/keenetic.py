@@ -17,23 +17,19 @@ class Router:
         self.__endpoint = f"http://{host}:{port}"
         self.__username = username
         self.__password = password
-        self.__auth(username, password)
+        self.__auth()
 
-    def __auth(self, username, password):
+    def __auth(self):
         response = self.get("/auth")
         if response.status_code == 401:
             realm = response.headers["X-NDM-Realm"]
-            password = f"{username}:{realm}:{password}"
+            password = f"{self.__username}:{realm}:{self.__password}"
             password = md5(password.encode("utf-8"))
             challenge = response.headers["X-NDM-Challenge"]
             password = challenge + password.hexdigest()
             password = sha256(password.encode("utf-8")).hexdigest()
-            response = self.post("/auth", {"login": username, "password": password})
+            response = self.post("/auth", {"login": self.__username, "password": password})
         return response.status_code == 200
-
-    @property
-    def is_authenticated(self):
-        return self.__auth(self.__username, self.__password)
 
     def get(self, address, params={}):
         return self.__session.get(self.__endpoint + address, params=params)
@@ -50,4 +46,7 @@ class Router:
                 filter(lambda device: device.active, map(ConnectedDevice, devices))
             )
         else:
-            return []
+            if self.__auth():
+                return self.connected_devices
+            else:
+                return []
