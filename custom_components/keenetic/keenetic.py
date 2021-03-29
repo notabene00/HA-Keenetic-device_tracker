@@ -10,6 +10,9 @@ class ConnectedDevice:
             key.replace("-", "_"): value for key, value in dictionary.items()
         }
 
+    def __getattr__(self, attr):
+        return self.__dict__.get(attr)
+
 
 class Router:
     def __init__(self, username="admin", password="", host="192.168.1.1", port=80):
