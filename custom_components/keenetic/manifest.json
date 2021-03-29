@@ -3,5 +3,6 @@
   "name": "Keenetic Tracker",
   "documentation": "https://www.home-assistant.io/integrations/keenetic",
   "requirements": ["requests==2.25.1"],
-  "codeowners": ["@fantomnotabene"]
+  "codeowners": ["@fantomnotabene"],
+  "version": "1.0"
 }
