@@ -40,8 +40,14 @@ Issues = "https://github.com/notabene00/HA-Keenetic-device_tracker/issues"
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
 python_files = ["test_*.py"]
 python_functions = ["test_*"]
+pythonpath = ["."]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::pytest.PytestDeprecationWarning",
+]
 
 [tool.coverage.run]
 source = ["custom_components/keenetic"]

@@ -13,17 +13,17 @@ CUSTOM_COMPONENTS_PATH = str(Path(__file__).parent.parent / "custom_components")
 if CUSTOM_COMPONENTS_PATH not in sys.path:
     sys.path.insert(0, CUSTOM_COMPONENTS_PATH)
 
-from keenetic.const import (
+from custom_components.keenetic.const import (
     CONNECTION_TYPE_WIRED,
     CONNECTION_TYPE_WIRELESS,
 )
-from keenetic.exceptions import (
+from custom_components.keenetic.exceptions import (
     KeeneticAuthenticationError,
     KeeneticConnectionError,
     KeeneticResponseError,
     KeeneticTimeoutError,
 )
-from keenetic.keenetic import ConnectedDevice, KeeneticRouter
+from custom_components.keenetic.keenetic import ConnectedDevice, KeeneticRouter
 
 
 class TestConnectedDevice:

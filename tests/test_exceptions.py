@@ -11,7 +11,7 @@ CUSTOM_COMPONENTS_PATH = str(Path(__file__).parent.parent / "custom_components")
 if CUSTOM_COMPONENTS_PATH not in sys.path:
     sys.path.insert(0, CUSTOM_COMPONENTS_PATH)
 
-from keenetic.exceptions import (
+from custom_components.keenetic.exceptions import (
     KeeneticAuthenticationError,
     KeeneticConnectionError,
     KeeneticError,
