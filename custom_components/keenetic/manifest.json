@@ -1,8 +1,11 @@
 {
   "domain": "keenetic",
-  "name": "Keenetic Tracker",
-  "documentation": "https://www.home-assistant.io/integrations/keenetic",
-  "requirements": ["requests==2.25.1"],
+  "name": "Keenetic Device Tracker",
+  "documentation": "https://github.com/notabene00/HA-Keenetic-device_tracker",
+  "requirements": ["httpx>=0.24.0"],
   "codeowners": ["@fantomnotabene"],
-  "version": "1.0"
+  "version": "2.0.0",
+  "config_flow": true,
+  "iot_class": "local_polling",
+  "integration_type": "hub"
 }

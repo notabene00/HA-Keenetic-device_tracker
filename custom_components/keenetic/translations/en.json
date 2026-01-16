@@ -1,0 +1,35 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to Keenetic Router",
+        "description": "Enter the connection details for your Keenetic router.",
+        "data": {
+          "host": "Host",
+          "username": "Username",
+          "password": "Password",
+          "port": "Port (leave empty for default)",
+          "use_ssl": "Use SSL/HTTPS",
+          "verify_ssl": "Verify SSL certificate"
+        },
+        "data_description": {
+          "host": "The hostname or IP address of your Keenetic router.",
+          "username": "The username for router authentication (usually 'admin').",
+          "password": "The password for router authentication.",
+          "port": "The port number (default: 80 for HTTP, 443 for HTTPS).",
+          "use_ssl": "Enable HTTPS connection to the router.",
+          "verify_ssl": "Verify the SSL certificate (disable for self-signed certificates)."
+        }
+      }
+    },
+    "error": {
+      "auth_failed": "Authentication failed. Please check your username and password.",
+      "cannot_connect": "Cannot connect to the router. Please check the host and port.",
+      "timeout": "Connection timed out. Please check if the router is reachable.",
+      "unknown": "An unexpected error occurred. Please check the logs for details."
+    },
+    "abort": {
+      "already_configured": "This router is already configured."
+    }
+  }
+}
